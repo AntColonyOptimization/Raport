@@ -1,0 +1,114 @@
+\documentclass[printmode, openany, oneside, eng]{mgr}
+%opcje klasy dokumentu mgr.cls zostały opisane w dołączonej instrukcji
+
+%poniżej deklaracje użycia pakietów, usunąć to co jest niepotrzebne
+\usepackage{polski}       %przydatne podczas składania dokumentów w
+%j. polskim 
+%\usepackage[polish]{babel} %alternatywnie do pakietu
+%polski, wybrać jeden z nich
+\usepackage[utf8]{inputenc} %kodowanie znaków, zależne od systemu
+\usepackage[T1]{fontenc} %poprawne składanie polskich czcionek
+
+%pakiety do grafiki
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{psfrag}
+\usepackage{epstopdf}
+
+
+%pakiety dodające dużo dodatkowych poleceń matematycznych
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+%pakiety wspomagające i poprawiające składanie tabel
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hhline}
+
+%pakiet wypisujący na marginesie etykiety równań i rysunków
+%zdefiniowanych przez \label{}, chcąc wygenerować finalną wersję
+%dokumentu wystarczy usunąć poniższą linię
+%\usepackage{showlabels}
+
+\usepackage{epsfig}
+\usepackage{listings}
+\usepackage{epstopdf}
+
+%definicje własnych poleceń
+\newcommand{\R}{I\!\!R} %symbol liczb rzeczywistych, działa tylko w
+                        %trybie matematycznym
+\newtheorem{theorem}{Twierdzenie}[section] %nowe otoczenie do
+                                           %składania twierdze
+%dane do złożenia strony tytułowej
+\title{Algorytm mrówkowy}
+\engtitle{}
+\author{autorzy}
+\supervisor{Prof. zw. dr hab. inż. Ignacy Dulęba}
+%\guardian{dr hab. inż. Imię Nazwisko Prof. PWr, I-6} %nie używać
+%jeśli opiekun jest tą samą osobą co prowadzący pracę
+
+%\date{2008} %standardowo u dołu strony tytułowej umieszczany jest
+%bieżący rok, to polecenie pozwala wstawić dowolny rok
+
+%poniżej jest lista kierunków i specjalności na wydziale elektroniki,
+%należy wybrać właściwe lub dopisać jeśli nie ma odpowiednich
+\field{Automatyka i Robotyka (AIR)}
+\specialisation{Systemy informatyczne w automatyce (ASI)}
+%\specialisation{Komputerowe sieci sterowania (ARK)}
+%\specialisation{Systemy informatyczne w automatyce (ASI)}
+%\specialisation{Komputerowe systemy zarządzania \\procesami
+%produkcyjnymi (ARS)} \field{Elektronika i telekomunikacja (EIT)}
+%\specialisation{Akustyka (ETA)} \specialisation{Aparatura
+%elektroniczna (EAE)} \specialisation{Elektroniczne i komputerowe
+%\\systemy automatyki (ESA)} \specialisation{Zastosowania inżynierii
+%komputerowej \\w technice (EZI)} \specialisation{Inżynieria dźwięku
+%(EID)} \specialisation{Elektronika stosowana \\i optokomunikacja
+%(TEO)} \specialisation{Telekomunikacyjne sieci szerokopasmowe (TSS)}
+%\specialisation{Teleinformatyczne sieci mobilne (TSM)}
+%\specialisation{Sygnały w telekomunikacji cyfrowej (TSC)}
+%\specialisation{Teleinformatyczne systemy rozsiewcze (TSR)}
+%\field{Informatyka (INF)} \specialisation{Systemy informatyki w
+%medycynie \\i technice (IMT)} \specialisation{Inżynieria systemów
+%informatycznych (INS)} \specialisation{Inżynieria internetowa (INT)}
+%\specialisation{Systemy i sieci komputerowe (ISK)}
+%\field{Teleinformatyka (TIN)} \specialisation{Teleinformatyka (TIN)}
+
+%tutaj zaczyna się właściwa treść dokumentu
+\usepackage{hyperref}
+\usepackage{listings}
+
+\hypersetup{
+    unicode=false,          % non-Latin characters in Acrobat?s bookmarks
+    pdftoolbar=true,        % show Acrobat?s toolbar?
+    pdfmenubar=true,        % show Acrobat?s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Sprawozdanie},    % title
+    pdfauthor={autorzy},     % author
+    pdfsubject={Planowanie działań i ruchu robotów},   % subject of the document
+    pdfkeywords={projekt} {PWR} {ASI}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\begin{document}
+\bibliographystyle{plabbrv} %tylko gdy używamy BibTeXa, ustawia polski	
+                            %styl bibliografii
+
+\maketitle %polecenie generujące stronę tytułową 1
+\chapter*{Wstęp}
+
+\chapter*{Założenia projektowe}
+
+\chapter*{...}
+
+\chapter*{Podsumowanie}
+
+
+\end{document}
