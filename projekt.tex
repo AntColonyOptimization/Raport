@@ -301,9 +301,74 @@ gdzie $w$ odpowiada szerokości, zaś $h$ - długości położenia punktów $s$ 
 \newline Rozwiązanie takie umożliwia szybsze znalezienie optymalnej ścieżki. Nie sprzyja ono jednak eksploracji mapy, co z kolei może mieć negatywny wpływ.
 \end{itemize}
 
+\chapter{Mapa} \label{chap:mapa}
 
+\section{Generowanie mapy}\label{sec:mapaGenerowanie}
+Mapa, po której poruszają się mrówki, jest reprezentowana w postaci siatki punktów, których wielkość jest skalowana na podstawie gęstości i rozmiarów mapy. Generowanie mapy odbywa się na podstawie pliku tekstowego, którego przykład przedstawiono na rysunku \ref{fig:map1}.\newline
 
+Liczbą $0$ oznaczono miejsca dostępne dla mrówek, po których mogą się swobodnie przemieszczać. Litera $S$ oznacza start, czyli mrowisko, natomiast $F$ miejsce, do którego dążą mrówki - jedzenie. Małą literą $x$ oznaczono przeszkody, które mrówki muszą omijać. Wszystkie elementy oddzielone są od siebie spacjami. Program przy pomocy wyrażeń regularnych eliminuje kilkukrotne spacje, które mogą powstać na skutek pomyłki.\newline
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/map1.png}
+\caption{Przykład pliku reprezentującego strukturę mapy.}
+\label{fig:map1}
+\end{figure}
 
+W pliku obsługiwane są również komentarze, które należy poprzedzać znakiem $\#$. Jeżeli znak taki występuje na początku linijki, zostaje ona pominięta. Jeden z plików reprezentujących mapę przedstawiono na rysunku \ref{fig:map2}. \newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/map2.png}
+\caption{Plik reprezentujący strukturę mapy wraz z komentarzami i kilkukrotnymi spacjami.}
+\label{fig:map2}
+\end{figure}
+
+Przy starcie programu mapę należy wczytać z poziomu interfejsu. Można wybrać jedną ze zdefiniowanych map lup podać ścieżkę do własnego pliku. Jeżeli program nie znajdzie pliku pod wskazaną ścieżką, bądź będzie on nieprawidłowy, poinformuje o tym użytkownika.\newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/map3.png}
+\caption{Wygląd mapy w aplikacji.}
+\label{fig:map3}
+\end{figure}
+
+Rysunek \ref{fig:map3} ilustruje wygląd mapy w aplikacji. Kolorem białym zaznaczono miejsca dostępne dla mrówek, kolorem szarym - przeszkody. Mrowisko zaznaczone zostało kolorem ciemnozielonym, a jedzeni (cel) - ciemnożółtym. Rysunek \ref{fig:map3} pokazuje mapę wczytaną z pliku widocznego na rys. \ref{fig:map2}.
+
+\section{Wizualizacja feromonów}\label{sec:mapaFeromony}
+Feromony reprezentowane są na mapie kolorem czerwonym, a ich intensywność jest proporcjonalna do przezroczystości koloru. Im bardziej przezroczysto-czerwona komórka, tym słabszy feromon w danym miejscu.\\
+
+Podgląd feromonów można włączać i wyłączać z poziomu interfejsu. Podczas uruchomienia algorytmu zanikanie i umacnianie feromonu są wyraźnie widoczne.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/feromony1.png}
+\caption{Plik reprezentujący rozkład feromonów.}
+\label{fig:feromony1}
+\end{figure}
+
+\section{Wyświetlanie aktualnych ścieżek}\label{sec:mapaSciezki}
+
+Aplikacja umożliwia podgląd aktualnych ścieżek, pokonanych przez mrówki. Z poziomu interfejsu należy wybrać mrówkę, której ścieżkę chce się obserwować, a droga odbyta przez te mrówkę zostanie wyświetlona. Bieżące ścieżki dla mrówek reprezentowane są kolorem błękitnym. Przykład aktualnej ścieżki można zobaczyć na rys. \ref{fig:sciezki1}.\newline
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1]{img/sciezki1.png}
+\caption{Przykład aktualnej ścieżki dla wybranej mrówki.}
+\label{fig:sciezki1}
+\end{figure}
+
+Aktualna ścieżka prowadzona jest dla każdej komórki, biorąc pod uwagę sąsiadujące z nią - poprzednią i następną komórkę które odwiedza mrówka, tak żeby droga odbyta przez mrówkę była najkrótsza z punktu widzenia tych komórek.
+
+\section{Wyświetlanie najlepszej ścieżki}\label{sec:mapaNajSciezka}
+
+Najlepsza ścieżka jest najkrótszą drogą od mrowiska do jedzenia, jaką udało się znaleźć mrówkom od początku uruchomienia algorytmu. Jest ona generowana analogicznie do ścieżek bieżących i oznaczana kolorem jasnozielonym (rys. \ref{fig:sciezki2}).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1]{img/sciezki2.png}
+\caption{Przykład najlepszej ścieżki.}
+\label{fig:sciezki2}
+\end{figure}
 
 \end{document}
