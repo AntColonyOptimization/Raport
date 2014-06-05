@@ -45,7 +45,9 @@
 %dane do złożenia strony tytułowej
 \title{Algorytm mrówkowy}
 \engtitle{}
-\author{autorzy}
+\author{Marcin Janik\\
+Karolina Samorek\\
+Przemysław Tymiński}
 \supervisor{Prof. zw. dr hab. inż. Ignacy Dulęba}
 %\guardian{dr hab. inż. Imię Nazwisko Prof. PWr, I-6} %nie używać
 %jeśli opiekun jest tą samą osobą co prowadzący pracę
@@ -370,5 +372,42 @@ Najlepsza ścieżka jest najkrótszą drogą od mrowiska do jedzenia, jaką uda�
 \caption{Przykład najlepszej ścieżki.}
 \label{fig:sciezki2}
 \end{figure}
+
+
+\chapter{Aplikacja} \label{chap:app}
+
+Zgodnie z założeniami projektowymi, zrealizowany został program służący do badania i wyświetlania wyników działania algorytmu mrówkowego. Aplikacja napisana przy użyciu platformy .NET składa się z zestawu widoków. \newline
+
+Pierwszy widok zawiera interfejs do wprowadzania danych wejściowych oraz wczytywania mapy problemu. Oprócz tego zawiera okno wizualizujące aktualny stan algorytmu. Po wczytaniu mapy oraz ustaleniu parametrów można uruchomić algorytm w trybie ciągłym oraz w trybie krokowym. Dodatkowo w trybie ciągłym jest opcja zatrzymania algorytmu i uruchomienia go ponownie od tego samego miejsca.\ref{fig:View1}.\newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.75]{img/View1.png}
+\caption{Widok wizualizacji.}
+\label{fig:View1}
+\end{figure}
+
+Kolejnym widokiem jest okno zawierające podstawy teoretyczne, które były wykorzystane podczas konstrukcji algorytmu.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/View2.png}
+\caption{Widok zawierający teorię.}
+\label{fig:View2}
+\end{figure}
+\newpage
+Ostatni widok przedstawia dane wyjściowe po zakończeniu algorytmu. Zawiera informację o długosci znalezionej scieżki, oraz w której iteracji osiągnięto prezentowany wynik. Dodatkowo wypisane są bierzące scieżki i ich długosci.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{img/View3.png}
+\caption{Widok wyników.}
+\label{fig:View3}
+\end{figure}
+
+\chapter{Podsumowanie} \label{chap:end}
+
+Algorytmy mrówkowe są narzędziem stworzonym do przeszukiwania optymalnej scieżki, jednak ich zastosowanie nie gwarantuje znalezienia optimum globalnego. Dodatkową zaletą algorytmu mrówkowego jest możliwosć przedstawienia rozwiązania w postaci szeregu kroków.\\
+Grupie udało się zrealizować założenia projektowe. Kompletna aplikacja zawiera wszystkie trzy moduły - algorytm, wizualizację stanu algorytmu oraz interfejs użytkownika.
 
 \end{document}
